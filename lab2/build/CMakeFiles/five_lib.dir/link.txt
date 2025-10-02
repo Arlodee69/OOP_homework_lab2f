@@ -1,0 +1,2 @@
+/usr/bin/ar qc libfive_lib.a CMakeFiles/five_lib.dir/src/function.cpp.o
+/usr/bin/ranlib libfive_lib.a

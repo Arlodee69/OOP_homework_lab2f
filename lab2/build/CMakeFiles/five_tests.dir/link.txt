@@ -1,0 +1,1 @@
+/usr/bin/c++  -Wall -Wextra -Wpedantic CMakeFiles/five_tests.dir/test/test_five.cpp.o -o five_tests  libfive_lib.a lib/libgtest_main.a lib/libgtest.a 
