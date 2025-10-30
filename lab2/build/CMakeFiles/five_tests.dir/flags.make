@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/anton/code/homework_oop/lab2/include -isystem /home/anton/code/homework_oop/lab2/build/_deps/googletest-src/googletest/include -isystem /home/anton/code/homework_oop/lab2/build/_deps/googletest-src/googletest
+CXX_INCLUDES = -I/home/anton/code/homework_ooplab2/lab2/include -isystem /home/anton/code/homework_ooplab2/lab2/build/_deps/googletest-src/googletest/include -isystem /home/anton/code/homework_ooplab2/lab2/build/_deps/googletest-src/googletest
 
 CXX_FLAGS =  -Wall -Wextra -Wpedantic -std=gnu++20
 

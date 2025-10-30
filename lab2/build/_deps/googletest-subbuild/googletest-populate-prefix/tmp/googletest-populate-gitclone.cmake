@@ -3,21 +3,21 @@
 
 cmake_minimum_required(VERSION 3.5)
 
-if(EXISTS "/home/anton/code/homework_oop/lab2/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-gitclone-lastrun.txt" AND EXISTS "/home/anton/code/homework_oop/lab2/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-gitinfo.txt" AND
-  "/home/anton/code/homework_oop/lab2/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-gitclone-lastrun.txt" IS_NEWER_THAN "/home/anton/code/homework_oop/lab2/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-gitinfo.txt")
+if(EXISTS "/home/anton/code/homework_ooplab2/lab2/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-gitclone-lastrun.txt" AND EXISTS "/home/anton/code/homework_ooplab2/lab2/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-gitinfo.txt" AND
+  "/home/anton/code/homework_ooplab2/lab2/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-gitclone-lastrun.txt" IS_NEWER_THAN "/home/anton/code/homework_ooplab2/lab2/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-gitinfo.txt")
   message(STATUS
     "Avoiding repeated git clone, stamp file is up to date: "
-    "'/home/anton/code/homework_oop/lab2/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-gitclone-lastrun.txt'"
+    "'/home/anton/code/homework_ooplab2/lab2/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-gitclone-lastrun.txt'"
   )
   return()
 endif()
 
 execute_process(
-  COMMAND ${CMAKE_COMMAND} -E rm -rf "/home/anton/code/homework_oop/lab2/build/_deps/googletest-src"
+  COMMAND ${CMAKE_COMMAND} -E rm -rf "/home/anton/code/homework_ooplab2/lab2/build/_deps/googletest-src"
   RESULT_VARIABLE error_code
 )
 if(error_code)
-  message(FATAL_ERROR "Failed to remove directory: '/home/anton/code/homework_oop/lab2/build/_deps/googletest-src'")
+  message(FATAL_ERROR "Failed to remove directory: '/home/anton/code/homework_ooplab2/lab2/build/_deps/googletest-src'")
 endif()
 
 # try the clone 3 times in case there is an odd git clone issue
@@ -27,7 +27,7 @@ while(error_code AND number_of_tries LESS 3)
   execute_process(
     COMMAND "/usr/bin/git"
             clone --no-checkout --config "advice.detachedHead=false" "https://github.com/google/googletest.git" "googletest-src"
-    WORKING_DIRECTORY "/home/anton/code/homework_oop/lab2/build/_deps"
+    WORKING_DIRECTORY "/home/anton/code/homework_ooplab2/lab2/build/_deps"
     RESULT_VARIABLE error_code
   )
   math(EXPR number_of_tries "${number_of_tries} + 1")
@@ -42,7 +42,7 @@ endif()
 execute_process(
   COMMAND "/usr/bin/git"
           checkout "v1.15.0" --
-  WORKING_DIRECTORY "/home/anton/code/homework_oop/lab2/build/_deps/googletest-src"
+  WORKING_DIRECTORY "/home/anton/code/homework_ooplab2/lab2/build/_deps/googletest-src"
   RESULT_VARIABLE error_code
 )
 if(error_code)
@@ -54,20 +54,20 @@ if(init_submodules)
   execute_process(
     COMMAND "/usr/bin/git" 
             submodule update --recursive --init 
-    WORKING_DIRECTORY "/home/anton/code/homework_oop/lab2/build/_deps/googletest-src"
+    WORKING_DIRECTORY "/home/anton/code/homework_ooplab2/lab2/build/_deps/googletest-src"
     RESULT_VARIABLE error_code
   )
 endif()
 if(error_code)
-  message(FATAL_ERROR "Failed to update submodules in: '/home/anton/code/homework_oop/lab2/build/_deps/googletest-src'")
+  message(FATAL_ERROR "Failed to update submodules in: '/home/anton/code/homework_ooplab2/lab2/build/_deps/googletest-src'")
 endif()
 
 # Complete success, update the script-last-run stamp file:
 #
 execute_process(
-  COMMAND ${CMAKE_COMMAND} -E copy "/home/anton/code/homework_oop/lab2/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-gitinfo.txt" "/home/anton/code/homework_oop/lab2/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-gitclone-lastrun.txt"
+  COMMAND ${CMAKE_COMMAND} -E copy "/home/anton/code/homework_ooplab2/lab2/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-gitinfo.txt" "/home/anton/code/homework_ooplab2/lab2/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-gitclone-lastrun.txt"
   RESULT_VARIABLE error_code
 )
 if(error_code)
-  message(FATAL_ERROR "Failed to copy script-last-run stamp file: '/home/anton/code/homework_oop/lab2/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-gitclone-lastrun.txt'")
+  message(FATAL_ERROR "Failed to copy script-last-run stamp file: '/home/anton/code/homework_ooplab2/lab2/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-gitclone-lastrun.txt'")
 endif()

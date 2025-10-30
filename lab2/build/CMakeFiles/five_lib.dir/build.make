@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/anton/code/homework_oop/lab2
+CMAKE_SOURCE_DIR = /home/anton/code/homework_ooplab2/lab2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/anton/code/homework_oop/lab2/build
+CMAKE_BINARY_DIR = /home/anton/code/homework_ooplab2/lab2/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/five_lib.dir/depend.make
@@ -70,18 +70,18 @@ include CMakeFiles/five_lib.dir/progress.make
 include CMakeFiles/five_lib.dir/flags.make
 
 CMakeFiles/five_lib.dir/src/function.cpp.o: CMakeFiles/five_lib.dir/flags.make
-CMakeFiles/five_lib.dir/src/function.cpp.o: /home/anton/code/homework_oop/lab2/src/function.cpp
+CMakeFiles/five_lib.dir/src/function.cpp.o: /home/anton/code/homework_ooplab2/lab2/src/function.cpp
 CMakeFiles/five_lib.dir/src/function.cpp.o: CMakeFiles/five_lib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/anton/code/homework_oop/lab2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/five_lib.dir/src/function.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/five_lib.dir/src/function.cpp.o -MF CMakeFiles/five_lib.dir/src/function.cpp.o.d -o CMakeFiles/five_lib.dir/src/function.cpp.o -c /home/anton/code/homework_oop/lab2/src/function.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/anton/code/homework_ooplab2/lab2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/five_lib.dir/src/function.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/five_lib.dir/src/function.cpp.o -MF CMakeFiles/five_lib.dir/src/function.cpp.o.d -o CMakeFiles/five_lib.dir/src/function.cpp.o -c /home/anton/code/homework_ooplab2/lab2/src/function.cpp
 
 CMakeFiles/five_lib.dir/src/function.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/five_lib.dir/src/function.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/anton/code/homework_oop/lab2/src/function.cpp > CMakeFiles/five_lib.dir/src/function.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/anton/code/homework_ooplab2/lab2/src/function.cpp > CMakeFiles/five_lib.dir/src/function.cpp.i
 
 CMakeFiles/five_lib.dir/src/function.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/five_lib.dir/src/function.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/anton/code/homework_oop/lab2/src/function.cpp -o CMakeFiles/five_lib.dir/src/function.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/anton/code/homework_ooplab2/lab2/src/function.cpp -o CMakeFiles/five_lib.dir/src/function.cpp.s
 
 # Object files for target five_lib
 five_lib_OBJECTS = \
@@ -93,7 +93,7 @@ five_lib_EXTERNAL_OBJECTS =
 libfive_lib.a: CMakeFiles/five_lib.dir/src/function.cpp.o
 libfive_lib.a: CMakeFiles/five_lib.dir/build.make
 libfive_lib.a: CMakeFiles/five_lib.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/anton/code/homework_oop/lab2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libfive_lib.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/anton/code/homework_ooplab2/lab2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libfive_lib.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/five_lib.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/five_lib.dir/link.txt --verbose=$(VERBOSE)
 
@@ -106,6 +106,6 @@ CMakeFiles/five_lib.dir/clean:
 .PHONY : CMakeFiles/five_lib.dir/clean
 
 CMakeFiles/five_lib.dir/depend:
-	cd /home/anton/code/homework_oop/lab2/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/anton/code/homework_oop/lab2 /home/anton/code/homework_oop/lab2 /home/anton/code/homework_oop/lab2/build /home/anton/code/homework_oop/lab2/build /home/anton/code/homework_oop/lab2/build/CMakeFiles/five_lib.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/anton/code/homework_ooplab2/lab2/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/anton/code/homework_ooplab2/lab2 /home/anton/code/homework_ooplab2/lab2 /home/anton/code/homework_ooplab2/lab2/build /home/anton/code/homework_ooplab2/lab2/build /home/anton/code/homework_ooplab2/lab2/build/CMakeFiles/five_lib.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/five_lib.dir/depend
 

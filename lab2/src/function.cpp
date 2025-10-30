@@ -1,4 +1,4 @@
-#include "function.h"
+#include "../include/function.h"
 #include <iostream>
 #include <cstdio>
 #include <stdexcept>
@@ -10,11 +10,11 @@ Five::Five(){
 
 Five::Five(const size_t& n, unsigned char t){
     if (t > 4) throw std::invalid_argument("Digit must be between 0 and 4");
+
     size = n;
-    try {data = new unsigned char[size];
-    } catch (const std::bad_alloc& e){
-        printf("Allocation Error");
-    }
+
+    data = new unsigned char[size];
+
     for (size_t i = 0; i < size; i++){
         data[i] = t;
     }
@@ -22,11 +22,17 @@ Five::Five(const size_t& n, unsigned char t){
 
 Five::Five(const std::initializer_list< unsigned char > &t){
     size = t.size();
+
     data = new unsigned char[size];
+
     size_t i = 0;
     for (unsigned char value : t){
-        if (value > 4) throw std::invalid_argument("Digit must be between 0 and 4");
-        data[i++] = value;
+        if (value > 4){
+            delete[] data;
+            throw std::invalid_argument("Digit must be between 0 and 4");
+            }
+        data[size - 1 - i] = value;
+        i++;
     }
 }
 
@@ -36,21 +42,26 @@ Five::Five(const std::string &t){
         data = nullptr;
         return;
     }
+    
     size = t.length();
+
     data = new unsigned char[size];
+
     for (size_t i = 0; i< size; i++){
         char c = t[i];
         if (c < '0' || c > '4'){
             delete[] data;
             throw std::invalid_argument("String must contain only digits 0-4");
         }
-        data[i] = c - '0';
+        data[size - 1 - i] = c - '0';
     }
 }
 
 Five::Five(const Five& other){
     size = other.size;
+
     data = new unsigned char[size];
+
     for (size_t i = 0; i < size; i++){
         data[i] = other.data[i];
     }
@@ -67,102 +78,93 @@ Five::~Five() noexcept{
     data = nullptr;
 }
 
-Five Five::operator+(const Five& other) const{
+Five Five::add(const Five& other) const{
     size_t maxSize = std::max(size, other.size);
     size_t resultSize = maxSize + 1;
     unsigned char* resultData = new unsigned char[resultSize]();
     int carry = 0;
-    int i = size - 1;
-    int j = other.size - 1;
-    int k = resultSize - 1;
-
-    while (i >= 0 || j >= 0 || carry > 0){
+    for(size_t k = 0; k < resultSize; ++k) {
         int sum = carry;
-        
-        if (i >= 0){
-            sum += data[i];
-            i--;
+        if(k < size) {
+            sum += data[k];
         }
-        
-        if (j >= 0){
-            sum += other.data[j];
-            j--;
+        if(k < other.size) {
+            sum += other.data[k];
         }
+
         carry = sum / 5;
         resultData[k] = sum % 5;
-        k--;
     }
-    size_t startIndex = 0;
-    while (startIndex < resultSize - 1 && resultData[startIndex] == 0){
-        startIndex++;
+
+    size_t finalSize = resultSize;
+    while(finalSize > 1 && resultData[finalSize - 1] == 0) {
+        finalSize--;
     }
+
     Five result;
-    result.size = resultSize - startIndex;
-    result.data = new unsigned char[result.size];
-    
-    for (size_t i = 0; i < result.size; i++){
-        result.data[i] = resultData[startIndex + i];
+    result.size = finalSize;
+    result.data = new unsigned char[finalSize];
+    for(size_t i = 0; i < finalSize; ++i) {
+        result.data[i] = resultData[i];
     }
+
     delete[] resultData;
     return result;
 }
 
-Five Five::operator-(const Five& other) const{
-    if (*this < other){
+Five Five::copy() const{
+    return(Five(*this));
+}
+
+Five Five::subtract(const Five& other) const{
+    if (lessthan(other)){
         throw std::underflow_error("Result would be negative");
     }
     size_t maxSize = std::max(size, other.size);
     unsigned char* resultData = new unsigned char[maxSize]();
-    
     int borrow = 0;
-    int i = size - 1;
-    int j = other.size - 1;
-    int k = maxSize - 1;
-    
-    while (i >= 0 || j >= 0) {
+
+
+    for(size_t k = 0; k < maxSize; ++k) {
         int top, bottom;
-        if (i >= 0){
-            top = data[i];
-        }
-        else{
+
+        if(k < size) {
+            top = data[k];
+        } else {
             top = 0;
         }
-        if (j >= 0){
-            bottom = other.data[j];
-        }
-        else{
+        top -= borrow;
+        if(k < other.size) {
+            bottom = other.data[k];
+        } else {
             bottom = 0;
         }
-        top -= borrow;
-        
-        if (top < bottom) {
+        if(top < bottom) {
             top += 5;
             borrow = 1;
         } else {
             borrow = 0;
         }
-        
+
         resultData[k] = top - bottom;
-        i--;
-        j--;
-        k--;
     }
-    size_t startIndex = 0;
-    while (startIndex < maxSize - 1 && resultData[startIndex] == 0) {
-        startIndex++;
+    size_t finalSize = maxSize;
+    while(finalSize > 1 && resultData[finalSize - 1] == 0) {
+        finalSize--;
     }
-    
+
     Five result;
-    result.size = maxSize - startIndex;
-    result.data = new unsigned char[result.size];
-    for (size_t i = 0; i < result.size; i++){
-        result.data[i] = resultData[startIndex + i];
+    result.size = finalSize;
+    result.data = new unsigned char[finalSize];
+    for(size_t i = 0; i < finalSize; ++i) {
+        result.data[i] = resultData[i];
     }
+
     delete[] resultData;
     return result;
-}
+    }
 
-bool Five::operator==(const Five& other) const {
+bool Five::equals(const Five& other) const {
     if (size != other.size) return false;
     for (size_t i = 0; i < size; ++i) {
         if (data[i] != other.data[i]) return false;
@@ -170,18 +172,24 @@ bool Five::operator==(const Five& other) const {
     return true;
 }
 
-bool Five::operator!=(const Five& other) const {
-    return !(*this == other);
-}
-
-bool Five::operator<(const Five& other) const {
+bool Five::lessthan(const Five& other) const {
     if (size != other.size) return size < other.size;
-    for (size_t i = 0; i < size; ++i) {
-        if (data[i] != other.data[i]) return data[i] < other.data[i];
+    for (size_t i = size; i > 0; --i) {
+        size_t idx = i - 1;
+        if (data[idx] != other.data[idx]) {
+            return data[idx] < other.data[idx];
+        }
     }
     return false;
 }
 
-bool Five::operator>(const Five& other) const {
-    return other < *this;
+bool Five::greaterthan(const Five& other) const {
+    return !(lessthan(other)) && !equals(other);
+}
+
+int main(){
+    Five a("1234");
+    Five b(a);
+    std::cout<<&a<<std::endl;
+    std::cout<<&b<<std::endl;
 }

@@ -1,7 +1,7 @@
 CMakeFiles/five_lib.dir/src/function.cpp.o: \
- /home/anton/code/homework_oop/lab2/src/function.cpp \
+ /home/anton/code/homework_ooplab2/lab2/src/function.cpp \
  /usr/include/stdc-predef.h \
- /home/anton/code/homework_oop/lab2/include/function.h \
+ /home/anton/code/homework_ooplab2/lab2/include/function.h \
  /usr/include/c++/13/initializer_list \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \

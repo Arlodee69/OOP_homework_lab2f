@@ -16,12 +16,12 @@ public:
     Five(const Five& other);
     Five(Five&& other) noexcept;
     virtual ~Five() noexcept;
-    Five operator+(const Five& other) const;
-    Five operator-(const Five& other) const;
-    bool operator==(const Five& other) const;
-    bool operator!=(const Five& other) const;
-    bool operator<(const Five& other) const;
-    bool operator>(const Five& other) const;
+    Five add(const Five& other) const;
+    Five copy() const;
+    Five subtract(const Five& other) const;
+    bool equals(const Five& other) const;
+    bool lessthan(const Five& other) const;
+    bool greaterthan(const Five& other) const;
     size_t getSize() const { return size; }
     const unsigned char* getData() const { return data; }
 };

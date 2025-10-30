@@ -2,37 +2,37 @@
 	"sources" : 
 	[
 		{
-			"file" : "/home/anton/code/homework_oop/lab2/build/_deps/googletest-subbuild/CMakeFiles/googletest-populate"
+			"file" : "/home/anton/code/homework_ooplab2/lab2/build/_deps/googletest-subbuild/CMakeFiles/googletest-populate"
 		},
 		{
-			"file" : "/home/anton/code/homework_oop/lab2/build/_deps/googletest-subbuild/CMakeFiles/googletest-populate.rule"
+			"file" : "/home/anton/code/homework_ooplab2/lab2/build/_deps/googletest-subbuild/CMakeFiles/googletest-populate.rule"
 		},
 		{
-			"file" : "/home/anton/code/homework_oop/lab2/build/_deps/googletest-subbuild/CMakeFiles/googletest-populate-complete.rule"
+			"file" : "/home/anton/code/homework_ooplab2/lab2/build/_deps/googletest-subbuild/CMakeFiles/googletest-populate-complete.rule"
 		},
 		{
-			"file" : "/home/anton/code/homework_oop/lab2/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-build.rule"
+			"file" : "/home/anton/code/homework_ooplab2/lab2/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-build.rule"
 		},
 		{
-			"file" : "/home/anton/code/homework_oop/lab2/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-configure.rule"
+			"file" : "/home/anton/code/homework_ooplab2/lab2/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-configure.rule"
 		},
 		{
-			"file" : "/home/anton/code/homework_oop/lab2/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-download.rule"
+			"file" : "/home/anton/code/homework_ooplab2/lab2/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-download.rule"
 		},
 		{
-			"file" : "/home/anton/code/homework_oop/lab2/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-install.rule"
+			"file" : "/home/anton/code/homework_ooplab2/lab2/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-install.rule"
 		},
 		{
-			"file" : "/home/anton/code/homework_oop/lab2/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-mkdir.rule"
+			"file" : "/home/anton/code/homework_ooplab2/lab2/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-mkdir.rule"
 		},
 		{
-			"file" : "/home/anton/code/homework_oop/lab2/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-patch.rule"
+			"file" : "/home/anton/code/homework_ooplab2/lab2/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-patch.rule"
 		},
 		{
-			"file" : "/home/anton/code/homework_oop/lab2/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-test.rule"
+			"file" : "/home/anton/code/homework_ooplab2/lab2/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-test.rule"
 		},
 		{
-			"file" : "/home/anton/code/homework_oop/lab2/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-update.rule"
+			"file" : "/home/anton/code/homework_ooplab2/lab2/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-update.rule"
 		}
 	],
 	"target" : 
